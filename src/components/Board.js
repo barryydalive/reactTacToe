@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
 import {setSquare} from '../store'
 
 
+
 class Board extends React.Component {
   constructor(props) {
     super(props);
@@ -18,11 +19,11 @@ class Board extends React.Component {
   }
 
   handleClick(i) {
-    const {squares, setSquare} = this.props
+    const {squares,} = this.props
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    setSquare(i)
+    this.props.setSquare(i)
   }
 
   renderSquare(i) {
@@ -56,15 +57,16 @@ class Board extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    squares: state.squares,
     xIsNext: state.xIsNext,
-    turn: state.turn,
-    squares: state.squares
+    turn: state.turn
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setSquare: (i) => {dispatch(setSquare(i))}
+    setSquare: (idx) => {dispatch(setSquare(idx))}
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Board)

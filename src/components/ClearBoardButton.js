@@ -1,18 +1,16 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import {clearBoard} from '../store'
+import {connect} from 'react-redux'
 
 const ClearBoardButton = (props) => {
   return(
-    <button onClick={props.clearBoard}>RESET BOARD</button>
+    <button onClick={props.clearBoard}>Play Again</button>
   )
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    clearBoard: () => {
-      dispatch(clearBoard())
-    }
+    clearBoard: () => dispatch(clearBoard())
   }
 }
 

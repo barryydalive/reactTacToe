@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Game from './components/Game'
-import {Provider} from 'react-redux'
-import store from './store'
-import './index.css';
 
+import './index.css';
+import store from './store'
+import {Provider} from 'react-redux'
 
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
     <Provider store={store}>
       <Game/>
     </Provider>
+    
   )
 }
 

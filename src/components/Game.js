@@ -1,6 +1,7 @@
 import React from 'react'
 import Board from './Board'
-import ClearBoardButton from './ClearBoardButton'
+import ClearBoardButton from './ClearBoardButton';
+
 
 class Game extends React.Component {
   render() {
